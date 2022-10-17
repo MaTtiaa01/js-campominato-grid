@@ -49,19 +49,24 @@ btnEl.addEventListener("click", function () {
         gridSize = 49;
     }
 
-    for (let i = startNumb; i <= gridSize; i++) {
-        const cellEl = document.createElement("div");
-        cellEl.classList.add("cell")
-        cellEl.innerText = [i]
-        console.log(cellEl);
-        containerEL.insertAdjacentElement("beforeend",cellEl);
-
-        //quando clicco sulla casella si mette e toglie la classe active
-        cellEl.addEventListener("click", function(){
-            cellEl.classList.toggle("active")
-            console.log([i]);
-        })
+    function createGrid(min, max) {
+        
+        for (let i = min; i <= max; i++) {
+            const cellEl = document.createElement("div");
+            cellEl.classList.add("cell")
+            cellEl.innerText = [i]
+            console.log(cellEl);
+            containerEL.insertAdjacentElement("beforeend",cellEl);
+    
+            //quando clicco sulla casella si mette e toglie la classe active
+            cellEl.addEventListener("click", function(){
+                cellEl.classList.toggle("active")
+                console.log([i]);
+            })
+        }
     }
+
+    createGrid(startNumb,gridSize)
 
     
 })
