@@ -8,8 +8,11 @@
 
 //Ogni cella ha un numero progressivo, da 1 a 100.
 // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
+
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro 
+    // uso addeventlistener e toggle per mettere e togliere la classe "active"
 //e emetto un messaggio in console con il numero della cella cliccata.
+  //utilizzo this
 
 
 const btnEl = document.querySelector("button");
@@ -23,5 +26,13 @@ btnEl.addEventListener("click", function () {
         cellEl.innerText = [i]
         console.log(cellEl);
         containerEL.insertAdjacentElement("beforeend",cellEl);
+
+        //quando clicco sulla casella si mette e toglie la classe active
+        cellEl.addEventListener("click", function(){
+            cellEl.classList.toggle("active")
+            
+        })
     }
+
+    
 })
