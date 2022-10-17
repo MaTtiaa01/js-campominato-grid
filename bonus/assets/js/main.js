@@ -27,7 +27,7 @@
 
 const btnEl = document.querySelector("button");
 const containerEL = document.querySelector(".container");
-
+let startNumb = 1;
 let gridSize = 100;
 
 
@@ -40,7 +40,7 @@ btnEl.addEventListener("click", function () {
     if (difficulty === "difficoltà_1") {
         startNumb = 1;
         gridSize = 100;
-
+        
     }else if (difficulty === "difficoltà_2") {
         startNumb = 2;
         gridSize = 81;
@@ -57,6 +57,15 @@ btnEl.addEventListener("click", function () {
             cellEl.innerText = [i]
             console.log(cellEl);
             containerEL.insertAdjacentElement("beforeend",cellEl);
+
+            //in base alla difficoltà si forma la griglia
+            if (difficulty === "difficoltà_1") {
+                cellEl.classList.add('col_10');
+            }else if (difficulty === "difficoltà_2") {
+                cellEl.classList.add('col_9');
+            }else{
+                cellEl.classList.add('col_7');
+            }
     
             //quando clicco sulla casella si mette e toglie la classe active
             cellEl.addEventListener("click", function(){
@@ -64,9 +73,11 @@ btnEl.addEventListener("click", function () {
                 console.log([i]);
             })
         }
+        
     }
+    
+createGrid(startNumb,gridSize);
 
-    createGrid(startNumb,gridSize)
 
     
 })

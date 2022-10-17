@@ -14,15 +14,15 @@ body{
 }
 
 .col_10{
-    width: calc(100% / 12) * 10;
+    width: calc(100% / 10) ;
 }
 
 .col_9{
-    width: calc(100% / 12) * 9;
+    width: calc(100% / 9);
 }
 
 .col_7{
-    width: calc(100% / 12) * 7;
+    width: calc(100% / 7);
 }
 
 .container .cell{
