@@ -30,7 +30,7 @@ btnEl.addEventListener("click", function () {
         //quando clicco sulla casella si mette e toglie la classe active
         cellEl.addEventListener("click", function(){
             cellEl.classList.toggle("active")
-            
+            console.log([i]);
         })
     }
 
