@@ -14,13 +14,42 @@
 //e emetto un messaggio in console con il numero della cella cliccata.
   //utilizzo this
 
+ /**  Bonus
+  Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
+  con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
+  con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
+   con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+    se d_1 allora i=1 e gridsize = 100
+    se d_2 allora i= 2 e gridsize = 81
+    se d_3 allora i= 3 e gridsize = 49
+*/
 
 const btnEl = document.querySelector("button");
 const containerEL = document.querySelector(".container");
 
+let gridSize = 100;
+
+
 btnEl.addEventListener("click", function () {
 
-    for (let i = 1; i <= 100; i++) {
+    
+    let difficulty = document.querySelector("select").value;
+    console.log(difficulty);
+
+    if (difficulty === "difficoltà_1") {
+        startNumb = 1;
+        gridSize = 100;
+
+    }else if (difficulty === "difficoltà_2") {
+        startNumb = 2;
+        gridSize = 81;
+    }else{
+        startNumb = 3;
+        gridSize = 49;
+    }
+
+    for (let i = startNumb; i <= gridSize; i++) {
         const cellEl = document.createElement("div");
         cellEl.classList.add("cell")
         cellEl.innerText = [i]

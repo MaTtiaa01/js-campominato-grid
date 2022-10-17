@@ -13,8 +13,20 @@ body{
     flex-wrap: wrap;
 }
 
+.col_10{
+    width: calc(100% / 12) * 10;
+}
+
+.col_9{
+    width: calc(100% / 12) * 9;
+}
+
+.col_7{
+    width: calc(100% / 12) * 7;
+}
+
 .container .cell{
-    width: calc(100% / 10);
+    
     aspect-ratio: 1/1;
     border: 2px solid white;
     color: white;
